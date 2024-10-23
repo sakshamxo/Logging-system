@@ -1,0 +1,31 @@
+{
+  "name": "healthnifity-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "nodemon app/api"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.2",
+    "next": "^15.0.1",
+    "react": "^19.0.0-rc-69d4b800-20241021",
+    "react-dom": "^19.0.0-rc-69d4b800-20241021"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.1",
+    "nodemon": "^3.1.7",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.1"
+  }
+}
