@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Logging System with Role-Based Access Control
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
+- [Usage](#usage)
+- [Exporting Logs](#exporting-logs)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+This project is a logging system that implements role-based access control (RBAC) to manage user actions and maintain an audit trail. It allows users to perform various actions while logging their activities, enabling administrators to monitor and control access effectively.
+
+## Features
+- **Role-Based Access Control**: Different user roles with specific permissions.
+- **CRUD Operations for Logs**: Create, Read, Update, and Delete log entries.
+- **Soft Deletion**: Logs can be marked as deleted without being permanently removed.
+- **Search Functionality**: Search logs by keywords (user ID, action type).
+- **Pagination**: Efficiently display large sets of logs.
+- **Export Logs**: Export logs in CSV or JSON format.
+- **Responsive Design**: User-friendly interface accessible on various devices.
+
+## Technologies Used
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+- **Others**: json2csv for CSV export functionality
 
 ## Getting Started
+To get started with this project locally, follow these steps:
 
-First, run the development server:
+### Prerequisites
+- Node.js (v14 or later)
+- MongoDB (local instance or MongoDB Atlas)
+- NPM or Yarn
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sakshamxo/logging-system.git
+   cd logging-system
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Set up environment variables. Create a `.env` file in the root directory and add your MongoDB URI and any other necessary configuration:
+   plaintext
+  MONGODB_URI=mongodb+srv://msakshams24:eaBpG6ek5ifFlp3j@healthnifity.z2xeo.mongodb.net/?retryWrites=true&w=majority&appName=healthnifity
+  JWT_SECRET=the_healthnifity
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+4. Start the development server:
+   bash
+   npm run dev
+   # or
+   yarn dev
+ 
 
-To learn more about Next.js, take a look at the following resources:
+5. Open your browser and go to `http://localhost:3000` to view the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## API Endpoints
+- **GET /api/logs**: Retrieve logs (supports pagination, searching, and soft-deleted logs).
+- **DELETE /api/logs/delete**: Delete a log entry by ID.
+- **GET /api/logs/export**: Export logs in CSV or JSON format.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
+1. Log in using a valid user account. 
+2. Navigate to the logs section to view all user activities.
+3. Use the search bar to filter logs based on user ID or action type.
+4. Click on the "Delete" button to remove a log entry (soft delete).
+5. Toggle to view deleted logs using the "Show Deleted Logs" button.
+6. Export logs using the "Export to CSV" or "Export to JSON" buttons.
 
-## Deploy on Vercel
+## Exporting Logs
+You can export logs in two formats:
+- **CSV**: Click on the "Export to CSV" button to download logs as a CSV file.
+- **JSON**: Click on the "Export to JSON" button to download logs as a JSON file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
+Contributions are welcome! If you have suggestions for improvements or features, please open an issue or submit a pull request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
